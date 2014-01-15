@@ -4,6 +4,8 @@ module Spree
     has_many :ad_hoc_option_values, :through => :ad_hoc_option_values_line_items
     has_many :product_customizations, :dependent => :destroy
 
+    attr_accessible :variant
+
     def options_text
       str = Array.new
       unless self.ad_hoc_option_values.empty? 
