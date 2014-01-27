@@ -27,6 +27,10 @@ module Spree
     def location_after_save
       selected_admin_product_ad_hoc_option_types_url(@ad_hoc_option_type.product)
     end
+    
+    def location_after_destroy
+      location_after_save
+    end
 
     private
     def load_product
